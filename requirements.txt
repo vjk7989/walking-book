@@ -2,3 +2,4 @@ streamlit
 fitz
 requests
 elevenlabs
+PyMuPDF

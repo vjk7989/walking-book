@@ -91,12 +91,12 @@ if uploaded_file is not None:
     st.text_area("Extracted Text", extracted_text, height=300, label_visibility="collapsed")
     
     if st.button('Summarize & Convert to Speech'):
-        with st.spinner('Summarizing text using Gemini API...'):
+        with st.spinner('Summarizing text using LLM...'):
             summary = summarize_text(extracted_text)
             st.subheader('Summary:')
             st.write(summary)
             
-            with st.spinner('Generating audio with Eleven Labs...'):
+            with st.spinner('Generating audio ...'):
                 audio_binary = text_to_speech(summary)
                 st.audio(audio_binary, format="audio/mp3")  # Stream the audio
                 st.download_button("Download Audio", audio_binary, "summary.mp3", "audio/mp3")
